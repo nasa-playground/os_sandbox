@@ -23,11 +23,11 @@ ipl:
 
 	mov [BOOT.DRIVE], dl
 
-	cdecl putc, word 'A'
-	cdecl putc, word 'B'
-	cdecl putc, word 'C'
+	cdecl puts, .s0
 
 	jmp $
+
+.s0 db "Booting...", 0x0A, 0x0D, 0
 
 ALIGN 2, db 0
 BOOT:
